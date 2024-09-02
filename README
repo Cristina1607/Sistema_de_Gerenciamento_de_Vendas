@@ -1,0 +1,72 @@
+# Sistema de Gerenciamento de Vendas
+
+## Descrição
+
+Este projeto é um sistema de banco de dados para gerenciar produtos, clientes e vendas em uma loja. O objetivo é criar um sistema que permita a administração eficiente de informações relacionadas a produtos, clientes e transações de vendas.
+
+## Estrutura do Banco de Dados
+
+O banco de dados `sistema_vendas` inclui as seguintes tabelas:
+
+1. **Cliente**: Armazena informações sobre os clientes.
+   - `id_cliente` (INT, Auto Incremento, Primary Key)
+   - `nome` (VARCHAR(100))
+   - `email` (VARCHAR(100), Unique)
+   - `telefone` (VARCHAR(15))
+
+2. **Produto**: Armazena informações sobre os produtos.
+   - `id_produto` (INT, Auto Incremento, Primary Key)
+   - `nome` (VARCHAR(100))
+   - `preco` (DECIMAL(10, 2))
+   - `quantidade_em_estoque` (INT)
+
+3. **Venda**: Registra as vendas realizadas.
+   - `id_venda` (INT, Auto Incremento, Primary Key)
+   - `id_cliente` (INT, Foreign Key)
+   - `id_produto` (INT, Foreign Key)
+   - `quantidade_vendida` (INT)
+   - `data_venda` (DATE)
+
+## Comandos Utilizados
+
+- `CREATE DATABASE`: Cria o banco de dados.
+- `CREATE TABLE`: Cria tabelas no banco de dados.
+- `INSERT INTO ... VALUES ...`: Insere dados nas tabelas.
+- `SELECT ... JOIN ...`: Consulta dados e combina informações de tabelas.
+- `UPDATE ... SET ... WHERE ...`: Atualiza dados em uma tabela.
+- `DELETE FROM ... WHERE ...`: Remove dados de uma tabela.
+
+## Operações
+
+### Inserção de Dados
+
+- Adiciona pelo menos 3 clientes, 3 produtos e 5 vendas.
+
+### Consultas
+
+- Exibe todas as vendas realizadas, incluindo o nome do cliente e o nome do produto.
+- Mostra todas as compras realizadas por um cliente específico.
+- Exibe o total de vendas realizadas por produto.
+
+### Atualização e Deleção de Dados
+
+- Atualiza o estoque de um produto após uma venda.
+- Atualiza as informações de um cliente.
+- Deleta uma venda e, se necessário, deleta o cliente associado.
+
+## Testes
+
+Teste todas as operações implementadas para garantir que o sistema funciona corretamente e que os dados estão sendo manipulados conforme esperado.
+
+## Arquivos
+
+- `sistema_vendas.sql`: Contém os comandos necessários para criar o banco de dados, tabelas e inserir os dados.
+- `relatorio.pdf`: Relatório com screenshots das consultas realizadas e uma breve explicação de como as operações foram implementadas.
+
+## Contribuições
+
+Se desejar contribuir para este projeto, faça um fork do repositório e envie suas alterações por meio de um pull request. Para sugestões ou relatórios de problemas, abra uma issue.
+
+## Licença
+
+Este projeto é licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
